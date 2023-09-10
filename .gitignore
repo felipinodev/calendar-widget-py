@@ -1,0 +1,10 @@
+*__pycache__
+env/
+*ui
+build/
+metadata*
+file_version*
+information*
+*.spec
+dist/
+setup/
