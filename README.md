@@ -111,3 +111,5 @@ This software was build using
 
 # License
 This software is licensed under the terms of the GNU General Public License version 3 (GPLv3). Full text of the license is available in the [LICENSE](https://github.com/felipinodev/calendar-widget-py/blob/master/LICENSE) file and [online](https://www.gnu.org/licenses/gpl-3.0.html).
+
+###
