@@ -1,0 +1,25 @@
+{
+    "holiday_static": [
+        {"month": 1, "day": 1, "title": "Ano Novo"},
+        {"month": 3, "day": 8, "title": "Dia Internacional das Mulheres"},
+        {"month": 4, "day": 21, "title": "Tiradentes"},
+        {"month": 4, "day": 22, "title": "Descobrimento do Brasil"},
+        {"month": 5, "day": 1, "title": "Dia do Trabalho"},
+        {"month": 6, "day": 12, "title": "Dia dos Namorados"},
+        {"month": 9, "day": 7, "title": "Independência do Brasil"},
+        {"month": 10, "day": 12, "title": "Dia das Crianças"},
+        {"month": 10, "day": 12, "title": "Nossa Senhora Aparecida"},
+        {"month": 11, "day": 2, "title": "Dia de Finados"},
+        {"month": 11, "day": 15, "title": "Proclamação da República"},
+        {"month": 11, "day": 20, "title": "Dia da Consciência Negra"},
+        {"month": 12, "day": 24, "title": "Véspera de Natal"},
+        {"month": 12, "day": 25, "title": "Natal"},
+        {"month": 12, "day": 31, "title": "Véspera de Ano Novo"}
+    ],
+    "holiday_dinamic": [
+        {"month": 2, "day": 13, "year": 2024, "title": "Carnaval"},
+        {"month": 3, "day": 31, "year": 2024, "title": "Páscoa"}
+    ]
+    
+}
+  
