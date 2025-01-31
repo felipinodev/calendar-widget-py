@@ -1,26 +1,4 @@
 {
-    "easter_holiday_dymanic": [
-      {
-        "title": "Carnaval",
-        "days_relative_to_easter": -47
-      },
-      {
-        "title": "Quarta-feira de Cinzas",
-        "days_relative_to_easter": -46
-      },
-      {
-        "title": "Sexta-feira Santa",
-        "days_relative_to_easter": -2
-      },
-      {
-        "title": "Páscoa",
-        "days_relative_to_easter": 0
-      },
-      {
-        "title": "Corpus Christi",
-        "days_relative_to_easter": 60
-      }
-    ],
     "holiday_static": [
         {"month": 1, "day": 1, "title": "Ano Novo"},
         {"month": 3, "day": 8, "title": "Dia Internacional das Mulheres"},
@@ -37,6 +15,11 @@
         {"month": 12, "day": 24, "title": "Véspera de Natal"},
         {"month": 12, "day": 25, "title": "Natal"},
         {"month": 12, "day": 31, "title": "Véspera de Ano Novo"}
+    ],
+    "holiday_dinamic": [
+        {"month": 2, "day": 13, "year": 2024, "title": "Carnaval"},
+        {"month": 3, "day": 31, "year": 2024, "title": "Páscoa"}
     ]
+    
 }
   
