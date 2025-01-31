@@ -1,4 +1,7 @@
 import json
+import os
+import hashlib
+import requests
 from datetime import timedelta
 from dateutil.easter import easter
 from PyQt5.QtCore import QDate
@@ -18,6 +21,36 @@ def get_holidays():
     end_year = current_year + 10
     json_file_path = "./data/holidays.json"
 
+    url_Hodilays_db = "https://raw.githubusercontent.com/felipinodev/calendar-widget-py/refs/heads/master/data/holidays_db.json"
+    responseWeb = requests.get(url_Hodilays_db)
+
+    # Compare hash
+    def get_file_hash(file_path):
+        hash_md5 = hashlib.md5()
+        try:
+            with open(file_path, "rb") as f:
+                for chunk in iter(lambda: f.read(4096), b""):
+                    hash_md5.update(chunk)
+            return hash_md5.hexdigest()
+        except FileNotFoundError:
+            return None
+
+    if responseWeb.status_code == 200:
+        local_hash = None
+        if os.path.exists(json_file_path):
+            local_hash = get_file_hash(json_file_path)
+
+        web_hash = hashlib.md5(responseWeb.content).hexdigest()
+
+        if local_hash != web_hash:
+
+            # Different files download
+            with open(json_file_path, "wb") as file:
+                file.write(responseWeb.content)
+    else:
+        print(f"Error accessing the URL. Status Code: {responseWeb.status_code}")
+
+
     with open(json_file_path, "r") as file:
         holidays_data = json.load(file)
 
@@ -32,12 +65,14 @@ def get_holidays():
             holiday_date = QDate(year, month, day)
             holidays.append((holiday_date, title))
 
-    for holiday_data in holidays_data["easter_holiday_dymanic"]:
+    for holiday_data in holidays_data["holiday_dinamic"]:
+        month = holiday_data["month"]
+        day = holiday_data["day"]
+        year = holiday_data["year"]
         title = holiday_data["title"].encode("latin-1").decode()
-        days_relative_to_easter = holiday_data["days_relative_to_easter"]
 
-        for year in range(start_year, end_year + 1):            
-            holiday_date = easter(year) - timedelta(days=int(days_relative_to_easter))
-            holidays.append((holiday_date, title))
+        holiday_date = QDate(year, month, day)
+        holidays.append((holiday_date, title))
+
 
     return holidays
